@@ -4,13 +4,13 @@ class VotersController < ApplicationController
     # respond_to do |format|
     # format.html
     # format.json {render json: Candidate.all.to_json}
-    render json: Voter.all.to_json
+    render json: Voter.all
   end
 
   def create
-    voter = Voter.new(name: params[:name])
+    voter = Voter.new(name: params[:name], party: params[:party])
     if voter.save
-      render json: voter.to_json
+      render json: voter
     else
       render json: voter.errors
     end
@@ -26,9 +26,15 @@ class VotersController < ApplicationController
   end
 
   def update
-    voter = Voter.find([name: params[:name], party: params[:party]])
+    voter = Voter.find(params[:id])
     if voter.access_token == params[:access_token]
-      render json: voter.to_json
+      voter.name = params[:name] if params[:name]
+      voter.party = params[:party] if params[:party]
+      if voter.save
+        render json: voter
+      else
+        render json: voter.errors
+      end
     else
       render json: "Don't make me do a recount!"
     end

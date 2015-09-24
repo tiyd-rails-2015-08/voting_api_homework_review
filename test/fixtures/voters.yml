@@ -3,7 +3,9 @@
 vanessa:
   name: Vanessa Voter
   party: Republican
+  access_token: 7ey46rhe63gdy4trf
 
 eddie:
   name: Eddie Election
   party: Democrat
+  access_token: fh47fh6db8fb
