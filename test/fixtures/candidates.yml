@@ -1,13 +1,13 @@
 # Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
 
-one:
-  name: MyString
-  hometown: MyString
-  district: MyString
-  party: MyString
+pete:
+  name: Porkbarrel Pete
+  hometown: Pensacola
+  district: South
+  party: Republicrat
 
-two:
-  name: MyString
-  hometown: MyString
-  district: MyString
-  party: MyString
+larry:
+  name: Leftwing Larry
+  hometown: Laguna Beach
+  district: West
+  party: Democrat
